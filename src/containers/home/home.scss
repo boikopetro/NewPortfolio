@@ -1,0 +1,136 @@
+.home {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  &__text-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /*h1 {
+      color: var(--yellow-theme-main-color);
+      margin: 0;
+      font-weight: 500;
+      font-size: 8rem;
+      line-height: 10rem;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typingEffectAnimation 2.5s steps(30, end);
+    }*/
+    h1 div {
+      //font-family: Courier, monospace;
+      font-weight: 500;
+      font-size: 8rem;
+      color: var(--yellow-theme-main-color);
+      //rbox-shadow: 1em 0 0 var(--yellow-theme-main-color);
+      margin: 2rem 1rem;
+      width: 18.2ch;
+      overflow: hidden;
+      white-space: pre;
+      animation: .5s 10 linear, type 1.5s steps(30, end);
+      animation-fill-mode: none, forwards;
+      animation-delay: calc(1.5s * (var(--n) - 1)), calc(1.5s * (var(--n) - 1));
+      height: 1.5em;
+      line-height: 1.5em;
+      opacity: 0;
+    }
+
+    h1 div:nth-child(1) {
+      --n: 1;
+    }
+
+    h1 div:nth-child(2) {
+      --n: 2;
+    }
+
+    h1 div:last-child {
+      animation-iteration-count: infinite, 1; /* keep caret visible and blinking at the end */
+    }
+  }
+
+  &__contact-me {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    button {
+      cursor: pointer;
+      padding: 10px 70px;
+      font-size: 2rem;
+      background: transparent;
+      color: var(--yellow-theme-main-color);
+      border: 1.5px solid var(--yellow-theme-main-color);
+      border-radius: 4px;
+      font-weight: 500;
+
+      &:hover {
+        background: var(--yellow-theme-main-color);
+        color: #000;
+      }
+    }
+  }
+}
+/*
+@keyframes typingEffectAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}*/
+
+@keyframes type {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*@keyframes caret {
+  !* depends exactly what effect the 'caret' is to give as to how to time and step this *!
+  0% {
+    box-shadow: .8em 0 0 var(--yellow-theme-main-color);
+  }
+  49.9% {
+    box-shadow: .8em 0 0 var(--yellow-theme-main-color);
+  }
+  50% {
+    box-shadow: .8em 0 0 transparent;
+  }
+  99.9% {
+    box-shadow: .8em 0 0 transparent;
+  }
+  100% {
+    box-shadow: .8em 0 0 var(--yellow-theme-main-color);
+  }
+}*/
+
+@media only screen and (max-width: 550px) {
+  .home__text-wrapper h1 div {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+  .home__text-wrapper h1 div {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .home__text-wrapper h1 div {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+}
+
+
